@@ -1,0 +1,39 @@
+{
+    "name": "@orkio/transport-pulsar",
+    "version": "0.1.0",
+    "description": "Pulsar transport for Orkio SDK",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/orkio/orkio-js.git",
+        "directory": "packages/transport-pulsar"
+    },
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "clean": "rm -rf dist",
+        "prepublishOnly": "pnpm run build"
+    },
+    "dependencies": {
+        "@orkio/sdk": "^0.1.0",
+        "pulsar-client": "^1.18.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

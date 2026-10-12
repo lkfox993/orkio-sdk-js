@@ -1,0 +1,16 @@
+{
+  "name": "playground",
+  "private": true,
+  "dependencies": {
+    "@orkio/sdk": "*",
+    "@orkio/transport-kafka": "*",
+    "@orkio/transport-pulsar": "*",
+    "pulsar-client": "^1.18.0"
+  },
+  "scripts": {
+    "dev": "tsx index.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15"
+  }
+}

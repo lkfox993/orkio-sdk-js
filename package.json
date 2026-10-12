@@ -1,0 +1,35 @@
+{
+  "name": "orkio-sdk-js",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "dev:playground": "npm run dev --workspace=apps/playground",
+    "build:sdk": "npm run build --workspace=@orkio/sdk",
+    "build:transport-pulsar": "npm run build --workspace=@orkio/transport-pulsar",
+    "build:transport-kafka": "npm run build --workspace=@orkio/transport-kafka",
+    "publish:sdk": "pnpm --filter @orkio/sdk publish --access public",
+    "publish:transport-pulsar": "pnpm --filter @orkio/transport-pulsar publish --access public"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6",
+    "turbo": "^2.11.7",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "11.4.2"
+    }
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
